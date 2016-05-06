@@ -124,7 +124,7 @@ def get_files(root_path, cur_path, allow_types=[]):
             is_allow_list = (len(allow_types) == 0) or (ext in allow_types)
             if is_allow_list:
                 files.append({
-                    "url": urllib.basejoin(USettings.gSettings.MEDIA_URL, os.path.join(os.path.relpath(cur_path, root_path), item).replace("\\", "/")),
+                    "url": urljoin(USettings.gSettings.MEDIA_URL, os.path.join(os.path.relpath(cur_path, root_path), item).replace("\\", "/")),
                     "mtime": os.path.getmtime(item_fullname)
                 })
 
@@ -288,7 +288,7 @@ def catcher_remote_image(request):
 
             catcher_infos.append({
                 "state": state,
-                "url": urllib.urljoin(USettings.gSettings.MEDIA_URL, o_path_format),
+                "url": urllib.basejoin(USettings.gSettings.MEDIA_URL, o_path_format),
                 "size": os.path.getsize(o_filename),
                 "title": os.path.basename(o_file),
                 "original": remote_file_name,

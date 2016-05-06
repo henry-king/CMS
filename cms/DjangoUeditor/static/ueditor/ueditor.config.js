@@ -57,7 +57,7 @@
         //,langPath:URL +"lang/"
 
         //主题配置项,默认是default。有需要的话也可以使用如下这样的方式来自动多主题切换，当然，前提条件是themes文件夹下存在对应的主题文件：
-        //现有如下皮肤:default
+        //现有如下皮肤:defaultF
         //,theme:'default'
         //,themePath:URL +"themes/"
 
@@ -103,7 +103,7 @@
 
         //,fullscreen : false //是否开启初始化时即全屏，默认关闭
 
-        imagePopup:true      //图片操作的浮层开关，默认打开
+        //,imagePopup:true      //图片操作的浮层开关，默认打开
 
         //,autoSyncData:true //自动同步编辑器要提交的数据
         //,emotionLocalization:false //是否开启表情本地化，默认关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
