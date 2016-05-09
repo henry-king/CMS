@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from yg_cms import views as new_views
-from DjangoUeditor import urls as DjangoUeditor_urls
+
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^ueditor/', include(DjangoUeditor_urls)),
-    url(r'^index/', new_views.index, name='index'),
+    url(r'^summernote/', include('django_summernote.urls')),
+    url(r'^$', new_views.index, name='index'),
     url(r'^column/(?P<column_slug>[^/]+)/$', new_views.column_detail, name='column'),
     url(r'^yg_cms/(?P<pk>\d+)/(?P<article_slug>[^/]+)/$', new_views.article_detail, name='article'),
 ]

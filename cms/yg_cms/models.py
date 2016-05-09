@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from DjangoUeditor.models import UEditorField
 from django.core.urlresolvers import reverse
 
 
@@ -33,9 +31,7 @@ class Article(models.Model):
     slug = models.CharField('网址', max_length=256, unique=True)
 
     author = models.ForeignKey('auth.User', blank=True, null=True, verbose_name='作者')
-    content = UEditorField('内容', width=1000, height=300, default=u'', blank=True,
-                           imagePath="upload/images/", toolbars='besttome',
-                           filePath="uploads/files",)
+    content = models.TextField('内容')
 
     published = models.BooleanField('正式发布', default=True)
     pub_date = models.DateTimeField('发表时间', auto_now_add=True, editable=True)
@@ -48,5 +44,5 @@ class Article(models.Model):
         return reverse('article', args=(self.pk, self.slug))
 
     class Meta:
-        verbose_name = '教程'
-        verbose_name_plural = '教程'
+        verbose_name = '文章'
+        verbose_name_plural = '文章'

@@ -19,7 +19,7 @@ class Column(models.Model):
 class Article(models.Model):
     column = models.ManyToManyField(Column, verbose_name='归属栏目')
     title = models.CharField(verbose_name='标题')
-    slug = models.CharField(  会尽快发多少就好好呵呵verbose_name='网址', max_length=256, db_index=True)
+    slug = models.CharField(verbose_name='网址', max_length=256, db_index=True)
     author = models.ForeignKey('auth.User',blank=True, null=True, verbowe_name='作者')
     published = models.BooleanField(verbose_name='正式发布', default=True)
 

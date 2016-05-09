@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Column, Article
 
 
@@ -7,7 +7,7 @@ class ColumnAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'intro',)
 
 
-class ArticleAdmin(admin.ModelAdmin):
+class ArticleAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'author', 'pub_date', 'update_time')
 
 
