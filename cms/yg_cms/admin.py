@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Column, Article
+from .models import Article
+from .models import Column
 
 
 class ColumnAdmin(admin.ModelAdmin):

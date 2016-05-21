@@ -18,13 +18,14 @@ from django.contrib import admin
 from yg_cms import views as new_views
 
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^$', new_views.index, name='index'),
     url(r'^column/(?P<column_slug>[^/]+)/$', new_views.column_detail, name='column'),
     url(r'^yg_cms/(?P<pk>\d+)/(?P<article_slug>[^/]+)/$', new_views.article_detail, name='article'),
+    url(r'^archive/(?P<archive_slug>[^/]+)/$', new_views.archive, name='archives'),
+    url(r'^me/', new_views.me, name='me'),
 ]
 from django.conf import settings
 

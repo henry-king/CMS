@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'yg_cms',
     'django_summernote',
+    'pytz',
 ]
 
 MIDDLEWARE_CLASSES = [
